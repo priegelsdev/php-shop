@@ -14,7 +14,9 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
   <?php foreach ($products as $item) : ?>
     <div class="card">
       <div class="card-body">
+        <img src="<?php echo $item['image'] ?>" />
         <h5 class="card-title"><?php echo $item['name']; ?></h5>
+        <span><?php echo $item['price']; ?></span>
       </div>
     </div>
   <?php endforeach; ?>
