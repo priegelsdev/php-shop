@@ -15,12 +15,18 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg">
-      <a href="#">PHP Shop</a>
-      <ul>
-        <li><a class="text-muted">Home</a></li>
-        <li><a>Shop</a></li>
-        <li><a>Cart</a></li>
+    <nav class="d-flex justify-content-between navbar navbar-expand navbar-light bg-light p-3">
+      <a class="navbar-brand" href="/php-shop/index.php">PHP Shop</a>
+      <ul class="d-flex nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/php-shop/index.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/php-shop/shop.php">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/php-shop/cart.php">Cart</a>
+        </li>
       </ul>
     </nav>
   </header>
