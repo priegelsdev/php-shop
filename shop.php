@@ -17,6 +17,11 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <img src="<?php echo $item['image'] ?>" />
         <h5 class="card-title"><?php echo $item['name']; ?></h5>
         <span><?php echo $item['price']; ?></span>
+        <div class="buy-option-container">
+          <button>-</button>
+          <input class="item-quantity" type="number" value="1">
+          <button>+</button>
+        </div>
       </div>
     </div>
   <?php endforeach; ?>
