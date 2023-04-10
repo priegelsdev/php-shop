@@ -1,7 +1,23 @@
 <?php include 'inc/header.php'; ?>
 
+<?php
+$sql = 'SELECT * FROM products';
+$result = mysqli_query($conn, $sql);
+$products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+?>
+
 <main>
-  <div>Hello</div>
+  <?php if (empty($products)) : ?>
+    <p>All products sold out!</p>
+  <?php endif; ?>
+
+  <?php foreach ($products as $item) : ?>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $item['name']; ?></h5>
+      </div>
+    </div>
+  <?php endforeach; ?>
 </main>
 
 
