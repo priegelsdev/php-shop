@@ -10,21 +10,24 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
   <?php if (empty($products)) : ?>
     <p>All products sold out!</p>
   <?php endif; ?>
-
-  <?php foreach ($products as $item) : ?>
-    <div class="card">
-      <div class="card-body">
-        <img src="<?php echo $item['image'] ?>" />
-        <h5 class="card-title"><?php echo $item['name']; ?></h5>
-        <span><?php echo $item['price']; ?></span>
-        <div class="buy-option-container">
-          <button>-</button>
-          <input class="item-quantity" type="number" value="1">
-          <button>+</button>
+  <div class="d-flex flex-wrap justify-content-center gap-3 p-5">
+    <?php foreach ($products as $item) : ?>
+      <div class="card w-25">
+        <div class="card-body">
+          <img class="card-img-top" src="<?php echo $item['image'] ?>" />
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h5 class="card-title mt-2"><?php echo $item['name']; ?></h5>
+            <span>€ <?php echo $item['price']; ?></span>
+          </div>
+          <div class="buy-option-container d-flex justify-content-center gap-1">
+            <button class="btn btn-primary">-</button>
+            <input class="item-quantity w-25" type="number" value="1">
+            <button class="btn btn-primary">+</button>
+          </div>
         </div>
       </div>
-    </div>
-  <?php endforeach; ?>
+    <?php endforeach; ?>
+  </div>
 </main>
 
 
